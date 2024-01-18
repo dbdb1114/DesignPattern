@@ -81,10 +81,10 @@ public class BookShelf implements Iterable<Book>{
 ### BookShelfIterator
 
 bookShelf 필드는 현재 해당 BookShelfIterator가 검색할 책장이고, index필드는 현재 보고 있는 책을 가리킵니다.
-next 메소드에서는 book을 반환 후 index를 증가시키고 있으므로, 다음 책을 내보낼 준비를 한다고 볼 수 있습니다. 
+next 메소드에서는 book을 반환 후 index를 증가시키고 있으므로, 다음 책을 내보낼 준비를 한다고 볼 수 있습니다.
 
 ```java
-package chapter1;
+package part1_iterator_pattern;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -96,12 +96,12 @@ public class BookShelfIterator implements Iterator<Book> {
 
     public BookShelfIterator(BookShelf bookShelf) {
         this.bookShelf = bookShelf;
-        this.index = 0; 
+        this.index = 0;
     }
 
     @Override
     public boolean hasNext() {
-        if(index < bookShelf.getLength()){
+        if (index < bookShelf.getLength()) {
             return true;
         } else {
             return false;
@@ -110,9 +110,9 @@ public class BookShelfIterator implements Iterator<Book> {
 
     @Override
     public Book next() {
-        if(!hasNext()){
+        if (!hasNext()) {
             throw new NoSuchElementException();
-        } 
+        }
         Book book = bookShelf.getBookAt(index);
         index++;
         return book;

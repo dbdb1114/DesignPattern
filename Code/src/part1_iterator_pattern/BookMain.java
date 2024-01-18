@@ -1,4 +1,4 @@
-package chapter1;
+package part1_iterator_pattern;
 
 import java.util.Iterator;
 

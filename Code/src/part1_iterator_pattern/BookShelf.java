@@ -1,8 +1,7 @@
-package chapter1;
+package part1_iterator_pattern;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 public class BookShelf implements Iterable<Book>{
 
